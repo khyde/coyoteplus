@@ -145,6 +145,7 @@ FUNCTION UTM_TO_LL, East, North, DatumName,$
    u  = M/(P.A*(1.0-P.E^2/4.0 - 3.0*P.E^4/64.0- 5.0*P.E^6/256.0))	;rectifying latitude
    
    If N_elements(Zone) EQ 0 Then Zone = Replicate(31,Num)
+   IF N_ELEMENTS(ZONE) EQ 1 THEN ZONE = REPLICATE(ZONE,NUM)
    CM = -180.0 + 3.0d*(2.*(1>Zone<60) - 1.)
    
       ;Footprint latitude in degrees
